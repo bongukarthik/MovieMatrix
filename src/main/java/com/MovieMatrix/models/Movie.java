@@ -10,17 +10,17 @@ import lombok.*;
 @AllArgsConstructor
 @Table(name = "movies")
 public class Movie {
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private Long id;
 
-	private String title;
-	private String genre;
-	private String director;
-	private String releaseDate;
+  private String title;
+  private String genre;
+  private String director;
+  private String releaseDate;
 
-	@Column(length = 1000)
-	private String description;
+  @Column(length = 1000)
+  private String description;
 
-	private Float rating;
+  private Float rating;
 }

@@ -13,26 +13,26 @@ import java.util.List;
 @CrossOrigin(origins = "http://localhost:3000") // React frontend
 public class MovieController {
 
-	@Autowired
-	private MovieService movieService;
+  @Autowired
+  private MovieService movieService;
 
-	@GetMapping
-	public List<Movie> getAllMovies() {
-		return movieService.getAllMovies();
-	}
+  @GetMapping
+  public List<Movie> getAllMovies() {
+    return movieService.getAllMovies();
+  }
 
-	@GetMapping("/{id}")
-	public Movie getMovieById(@PathVariable Long id) {
-		return movieService.getMovieById(id);
-	}
+  @GetMapping("/{id}")
+  public Movie getMovieById(@PathVariable Long id) {
+    return movieService.getMovieById(id);
+  }
 
-	@PostMapping
-	public Movie addMovie(@RequestBody Movie movie) {
-		return movieService.addMovie(movie);
-	}
+  @PostMapping
+  public Movie addMovie(@RequestBody Movie movie) {
+    return movieService.addMovie(movie);
+  }
 
-	@DeleteMapping("/{id}")
-	public void deleteMovie(@PathVariable Long id) {
-		movieService.deleteMovie(id);
-	}
+  @DeleteMapping("/{id}")
+  public void deleteMovie(@PathVariable Long id) {
+    movieService.deleteMovie(id);
+  }
 }

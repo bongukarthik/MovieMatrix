@@ -12,26 +12,26 @@ import java.util.Map;
 @ControllerAdvice
 public class GlobalExceptionHandler {
 
-	// Handle Custom Exception
-	@ExceptionHandler(CustomException.class)
-	public ResponseEntity<Map<String, Object>> handleCustomException(CustomException ex) {
-		Map<String, Object> errorResponse = new HashMap<>();
-		errorResponse.put("timestamp", LocalDateTime.now());
-		errorResponse.put("message", ex.getMessage());
-		errorResponse.put("status", HttpStatus.BAD_REQUEST.value());
+  // Handle Custom Exception
+  @ExceptionHandler(CustomException.class)
+  public ResponseEntity<Map<String, Object>> handleCustomException(CustomException ex) {
+    Map<String, Object> errorResponse = new HashMap<>();
+    errorResponse.put("timestamp", LocalDateTime.now());
+    errorResponse.put("message", ex.getMessage());
+    errorResponse.put("status", HttpStatus.BAD_REQUEST.value());
 
-		return new ResponseEntity<>(errorResponse, HttpStatus.BAD_REQUEST);
-	}
+    return new ResponseEntity<>(errorResponse, HttpStatus.BAD_REQUEST);
+  }
 
-	// Handle Generic Exceptions
-	@ExceptionHandler(Exception.class)
-	public ResponseEntity<Map<String, Object>> handleGlobalException(Exception ex) {
-		Map<String, Object> errorResponse = new HashMap<>();
-		errorResponse.put("timestamp", LocalDateTime.now());
-		errorResponse.put("message", "An unexpected error occurred!");
-		errorResponse.put("details", ex.getMessage());
-		errorResponse.put("status", HttpStatus.INTERNAL_SERVER_ERROR.value());
+  // Handle Generic Exceptions
+  @ExceptionHandler(Exception.class)
+  public ResponseEntity<Map<String, Object>> handleGlobalException(Exception ex) {
+    Map<String, Object> errorResponse = new HashMap<>();
+    errorResponse.put("timestamp", LocalDateTime.now());
+    errorResponse.put("message", "An unexpected error occurred!");
+    errorResponse.put("details", ex.getMessage());
+    errorResponse.put("status", HttpStatus.INTERNAL_SERVER_ERROR.value());
 
-		return new ResponseEntity<>(errorResponse, HttpStatus.INTERNAL_SERVER_ERROR);
-	}
+    return new ResponseEntity<>(errorResponse, HttpStatus.INTERNAL_SERVER_ERROR);
+  }
 }
