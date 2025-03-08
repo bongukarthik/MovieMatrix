@@ -1,4 +1,4 @@
-package com.MovieMatrix.config;
+package com.movieMatrix.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -16,7 +16,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
-import com.MovieMatrix.filter.JwtFilter;
+import com.movieMatrix.filter.JwtFilter;
 import java.util.List;
 
 @Configuration

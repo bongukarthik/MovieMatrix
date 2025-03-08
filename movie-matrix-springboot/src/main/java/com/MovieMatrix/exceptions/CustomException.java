@@ -1,4 +1,4 @@
-package com.MovieMatrix.exceptions;
+package com.movieMatrix.exceptions;
 
 public class CustomException extends RuntimeException {
 

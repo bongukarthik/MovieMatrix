@@ -1,9 +1,9 @@
-package com.MovieMatrix.services;
+package com.movieMatrix.services;
 
-import com.MovieMatrix.models.Review;
-import com.MovieMatrix.models.User;
-import com.MovieMatrix.models.Movie;
-import com.MovieMatrix.repositories.ReviewRepository;
+import com.movieMatrix.models.Review;
+import com.movieMatrix.models.User;
+import com.movieMatrix.models.Movie;
+import com.movieMatrix.repositories.ReviewRepository;
 import org.springframework.stereotype.Service;
 import java.util.List;
 

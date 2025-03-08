@@ -1,4 +1,4 @@
-package com.MovieMatrix.filter;
+package com.movieMatrix.filter;
 
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
@@ -13,7 +13,7 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.GenericFilterBean;
 
-import com.MovieMatrix.utils.JwtUtil;
+import com.movieMatrix.utils.JwtUtil;
 
 import java.io.IOException;
 

@@ -1,4 +1,4 @@
-package com.MovieMatrix.exceptions;
+package com.movieMatrix.exceptions;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

@@ -1,4 +1,4 @@
-package com.MovieMatrix.models;
+package com.movieMatrix.models;
 
 public enum Role {
   USER, ADMIN,SUPER_ADMIN,MODERATOR

@@ -1,4 +1,4 @@
-package com.MovieMatrix.dtos;
+package com.movieMatrix.dtos;
 
 
 import lombok.*;

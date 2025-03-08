@@ -1,4 +1,4 @@
-package com.MovieMatrix.models;
+package com.movieMatrix.models;
 
 import java.util.List;
 import jakarta.persistence.*;

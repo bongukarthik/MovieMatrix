@@ -1,7 +1,7 @@
-package com.MovieMatrix.controllers;
+package com.movieMatrix.controllers;
 
-import com.MovieMatrix.models.Movie;
-import com.MovieMatrix.services.MovieService;
+import com.movieMatrix.models.Movie;
+import com.movieMatrix.services.MovieService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 

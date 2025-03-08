@@ -1,11 +1,11 @@
-package com.MovieMatrix.dtos;
+package com.movieMatrix.dtos;
 
 
 import lombok.*;
 
 import java.util.Date;
 import java.util.List;
-import com.MovieMatrix.models.Role;
+import com.movieMatrix.models.Role;
 
 @Getter
 @Setter

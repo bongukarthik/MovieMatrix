@@ -1,13 +1,13 @@
-package com.MovieMatrix.controllers;
+package com.movieMatrix.controllers;
 
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import com.MovieMatrix.dtos.RegisterRequest;
-import com.MovieMatrix.models.Role;
-import com.MovieMatrix.models.User;
-import com.MovieMatrix.services.UserService;
+import com.movieMatrix.dtos.RegisterRequest;
+import com.movieMatrix.models.Role;
+import com.movieMatrix.models.User;
+import com.movieMatrix.services.UserService;
 
 @RestController
 @RequestMapping("/api/users")

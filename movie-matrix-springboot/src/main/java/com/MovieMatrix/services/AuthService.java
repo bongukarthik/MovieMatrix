@@ -1,4 +1,4 @@
-package com.MovieMatrix.services;
+package com.movieMatrix.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -7,11 +7,11 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import com.MovieMatrix.dtos.RegisterRequest;
-import com.MovieMatrix.models.Role;
-import com.MovieMatrix.models.User;
-import com.MovieMatrix.repositories.UserRepository;
-import com.MovieMatrix.utils.JwtUtil;
+import com.movieMatrix.dtos.RegisterRequest;
+import com.movieMatrix.models.Role;
+import com.movieMatrix.models.User;
+import com.movieMatrix.repositories.UserRepository;
+import com.movieMatrix.utils.JwtUtil;
 import io.jsonwebtoken.Claims;
 import java.time.LocalDateTime;
 import java.util.ArrayList;

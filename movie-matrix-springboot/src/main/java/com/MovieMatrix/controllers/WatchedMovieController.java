@@ -1,9 +1,9 @@
-package com.MovieMatrix.controllers;
+package com.movieMatrix.controllers;
 
 
-import com.MovieMatrix.models.WatchedMovie;
-import com.MovieMatrix.models.User;
-import com.MovieMatrix.services.WatchedMovieService;
+import com.movieMatrix.models.WatchedMovie;
+import com.movieMatrix.models.User;
+import com.movieMatrix.services.WatchedMovieService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 

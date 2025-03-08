@@ -1,10 +1,10 @@
-package com.MovieMatrix.controllers;
+package com.movieMatrix.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import com.MovieMatrix.dtos.RegisterRequest;
-import com.MovieMatrix.services.AuthService;
+import com.movieMatrix.dtos.RegisterRequest;
+import com.movieMatrix.services.AuthService;
 
 import java.util.HashMap;
 import java.util.Map;

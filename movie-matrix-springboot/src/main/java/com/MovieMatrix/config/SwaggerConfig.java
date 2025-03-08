@@ -1,4 +1,4 @@
-package com.MovieMatrix.config;
+package com.movieMatrix.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

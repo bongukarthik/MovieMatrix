@@ -1,9 +1,9 @@
-package com.MovieMatrix.controllers;
+package com.movieMatrix.controllers;
 
-import com.MovieMatrix.models.Review;
-import com.MovieMatrix.models.User;
-import com.MovieMatrix.models.Movie;
-import com.MovieMatrix.services.ReviewService;
+import com.movieMatrix.models.Review;
+import com.movieMatrix.models.User;
+import com.movieMatrix.models.Movie;
+import com.movieMatrix.services.ReviewService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 

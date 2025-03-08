@@ -1,4 +1,4 @@
-package com.MovieMatrix.utils;
+package com.movieMatrix.utils;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import org.springframework.stereotype.Component;
-import com.MovieMatrix.models.User;
+import com.movieMatrix.models.User;
 
 @Component
 public class JwtUtil {

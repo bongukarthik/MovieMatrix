@@ -1,12 +1,12 @@
-package com.MovieMatrix.services;
+package com.movieMatrix.services;
 
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-import com.MovieMatrix.models.User;
-import com.MovieMatrix.repositories.UserRepository;
+import com.movieMatrix.models.User;
+import com.movieMatrix.repositories.UserRepository;
 
 @Service // Ensures Spring recognizes this as a Bean
 public class CustomUserDetailsService implements UserDetailsService {

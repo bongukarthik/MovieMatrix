@@ -1,7 +1,7 @@
-package com.MovieMatrix.repositories;
+package com.movieMatrix.repositories;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import com.MovieMatrix.models.Movie;
+import com.movieMatrix.models.Movie;
 import java.util.List;
 import java.util.Optional;
 

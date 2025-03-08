@@ -1,7 +1,7 @@
-package com.MovieMatrix.services;
+package com.movieMatrix.services;
 
-import com.MovieMatrix.models.Movie;
-import com.MovieMatrix.repositories.MovieRepository;
+import com.movieMatrix.models.Movie;
+import com.movieMatrix.repositories.MovieRepository;
 import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;

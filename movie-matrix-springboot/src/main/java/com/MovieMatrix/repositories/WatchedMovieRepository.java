@@ -1,9 +1,9 @@
-package com.MovieMatrix.repositories;
+package com.movieMatrix.repositories;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import com.MovieMatrix.models.WatchedMovie;
-import com.MovieMatrix.models.User;
-import com.MovieMatrix.models.Movie;
+import com.movieMatrix.models.WatchedMovie;
+import com.movieMatrix.models.User;
+import com.movieMatrix.models.Movie;
 import java.util.List;
 
 public interface WatchedMovieRepository extends JpaRepository<WatchedMovie, Long> {

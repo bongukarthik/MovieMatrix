@@ -1,4 +1,4 @@
-package com.MovieMatrix.controllers;
+package com.movieMatrix.controllers;
 
 import java.io.IOException;
 import java.nio.file.attribute.UserPrincipal;
@@ -7,10 +7,10 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
-import com.MovieMatrix.dtos.RegisterRequest;
-import com.MovieMatrix.models.User;
-import com.MovieMatrix.services.FileStorageService;
-import com.MovieMatrix.services.UserService;
+import com.movieMatrix.dtos.RegisterRequest;
+import com.movieMatrix.models.User;
+import com.movieMatrix.services.FileStorageService;
+import com.movieMatrix.services.UserService;
 
 @RestController
 @RequestMapping("/api/profile")

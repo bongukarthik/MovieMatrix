@@ -1,4 +1,4 @@
-package com.MovieMatrix.models;
+package com.movieMatrix.models;
 
 import java.time.LocalDateTime;
 import jakarta.persistence.Entity;

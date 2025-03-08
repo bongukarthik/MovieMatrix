@@ -1,4 +1,4 @@
-package com.MovieMatrix.repositories;
+package com.movieMatrix.repositories;
 
 import org.springframework.stereotype.Repository;
 
