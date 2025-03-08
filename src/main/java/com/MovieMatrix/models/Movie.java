@@ -1,26 +1,31 @@
 package com.MovieMatrix.models;
 
+import java.util.List;
 import jakarta.persistence.*;
 import lombok.*;
+import lombok.Data;
 
 @Entity
-@Getter
-@Setter
+@Table(name = "movies")
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "movies")
 public class Movie {
-  @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private Long id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-  private String title;
-  private String genre;
-  private String director;
-  private String releaseDate;
+    private String title;
+    private String genre;
+    private String director;
+    private String releaseDate;
+    private double rating;
+    
+    @ElementCollection
+    private List<String> actors; // List of actors in the movie
 
-  @Column(length = 1000)
-  private String description;
-
-  private Float rating;
+    @OneToMany(mappedBy = "movie", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Review> reviews;
+    
+    private String posterUrl; // URL for movie poster image
 }

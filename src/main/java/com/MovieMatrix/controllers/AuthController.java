@@ -1,8 +1,9 @@
 package com.MovieMatrix.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
+import com.MovieMatrix.dtos.RegisterRequest;
 import com.MovieMatrix.services.AuthService;
 
 import java.util.HashMap;
@@ -17,19 +18,18 @@ public class AuthController {
   private AuthService authService;
 
   @PostMapping("/register")
-  public Map<String, String> register(@RequestBody Map<String, String> request) {
-    String result =
-        authService.register(request.get("name"), request.get("email"), request.get("password"));
-    Map<String, String> response = new HashMap<>();
-    response.put("message", result);
-    return response;
+  public ResponseEntity<?> register(@RequestBody RegisterRequest request) {
+    String registeredUser = authService.register(request);
+    Map<String, Object> response = new HashMap<>();
+    response.put("user", registeredUser);
+    return ResponseEntity.ok(response);
   }
 
   @PostMapping("/login")
-  public Map<String, String> login(@RequestBody Map<String, String> request) {
-    String token = authService.login(request.get("email"), request.get("password"));
+  public ResponseEntity<?> login(@RequestBody RegisterRequest request) {
+    String token = authService.login(request);
     Map<String, String> response = new HashMap<>();
     response.put("token", token);
-    return response;
+    return ResponseEntity.ok(response);
   }
 }

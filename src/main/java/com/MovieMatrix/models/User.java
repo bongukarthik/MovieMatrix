@@ -1,58 +1,93 @@
 package com.MovieMatrix.models;
 
+import java.time.LocalDateTime;
+import java.util.Date;
+import java.util.List;
 import jakarta.persistence.*;
-import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.NotBlank;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Entity
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
+@Setter
+@Builder
 @Table(name = "users")
 public class User {
-  @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private Long id;
 
-  @NotBlank
-  private String username;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-  @NotBlank
-  private String password;
+    private String name;
 
-  @Email
-  @NotBlank
-  private String email;
+    @Column(unique = true, nullable = false)
+    private String email;
 
-  public Long getId() {
-    return id;
-  }
+    @Column(nullable = false)
+    private String password;
 
-  public void setId(Long id) {
-    this.id = id;
-  }
+    @Column(unique = true, length = 15, nullable = false)
+    private String phoneNumber; 
 
-  public String getUsername() {
-    return username;
-  }
+    private String address;
 
-  public void setUsername(String username) {
-    this.username = username;
-  }
+    @Temporal(TemporalType.DATE)
+    private Date dateOfBirth;
 
-  public String getPassword() {
-    return password;
-  }
+    @Column(nullable = false)
+    @ElementCollection(fetch = FetchType.EAGER)
+    @CollectionTable(name = "user_roles", joinColumns = @JoinColumn(name = "user_id"))
+    @Enumerated(EnumType.STRING)
+    private List<Role> role; 
 
-  public void setPassword(String password) {
-    this.password = password;
-  }
+    private String profilePicture; 
 
-  public String getEmail() {
-    return email;
-  }
+    @Builder.Default
+    private boolean status = true; 
 
-  public void setEmail(String email) {
-    this.email = email;
-  }
+    @Column(nullable = false, updatable = false)
+    private LocalDateTime registeredAt;
 
+    private LocalDateTime lastLoginAt;
+
+    // ✅ Favorite Movies
+    @ManyToMany
+    @JoinTable(
+        name = "user_favorites",
+        joinColumns = @JoinColumn(name = "user_id"),
+        inverseJoinColumns = @JoinColumn(name = "movie_id")
+    )
+    private List<Movie> favoriteMovies;
+
+    // ✅ Watchlist
+    @ManyToMany
+    @JoinTable(
+        name = "user_watchlist",
+        joinColumns = @JoinColumn(name = "user_id"),
+        inverseJoinColumns = @JoinColumn(name = "movie_id")
+    )
+    private List<Movie> watchlist;
+
+    // ✅ Watch History (Tracking when they watched a movie)
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<WatchedMovie> watchHistory;
+
+    // ✅ User Reviews
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Review> reviews;
+
+    @PrePersist
+    private void setDefaultRole() {
+        if (role == null || role.isEmpty()) {
+            role = List.of(Role.USER);
+        }
+    }
 }
+
