@@ -1,0 +1,76 @@
+/* Login Page - Modern UI */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(to right, #ff416c, #ff4b2b);
+    font-family: "Arial", sans-serif;
+}
+
+.login-card {
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    width: 350px;
+    text-align: center;
+}
+
+.login-title {
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.login-form input {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+    transition: 0.3s ease;
+}
+
+.login-form input:focus {
+    border-color: #ff416c;
+    box-shadow: 0px 0px 5px rgba(255, 65, 108, 0.5);
+}
+
+.login-button {
+    padding: 12px;
+    font-size: 18px;
+    background: #ff416c;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+.login-button:hover {
+    background: #ff2e63;
+}
+
+.error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 400px) {
+    .login-card {
+        width: 90%;
+        padding: 20px;
+    }
+}
