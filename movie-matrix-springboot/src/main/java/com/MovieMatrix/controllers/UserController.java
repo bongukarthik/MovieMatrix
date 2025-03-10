@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.nio.file.attribute.UserPrincipal;
 import java.util.List;
 
+import com.movieMatrix.dtos.ChangePasswordRequest;
 import com.movieMatrix.dtos.CommonResponse;
 import com.movieMatrix.dtos.RegisterRequestDTO;
 import com.movieMatrix.dtos.UserDTO;
@@ -26,38 +27,37 @@ public class UserController {
     @Autowired
     private FileStorageService fileStorageService;
 
-    // ✅ Get All Users (for React Admin)
+    //  Get All Users
     @GetMapping("/all")
     public ResponseEntity<List<UserDTO>> getAllUsers() {
         return ResponseEntity.ok(userService.getAllUsers());
     }
 
-    // ✅ Get User by ID
+    //  Get User by ID
     @GetMapping("/{id}")
     public ResponseEntity<?> getUserById(@PathVariable Long id) {
         User user = userService.getUserById(id);
         return user != null ? ResponseEntity.ok(user) : ResponseEntity.notFound().build();
     }
 
-    // ✅ Update User (including role updates)
+    //  Update User
     @PutMapping("/update")
     public ResponseEntity<UserDTO> updateUser(@RequestBody RegisterRequestDTO request) {
         UserDTO response = userService.updateUser(request);
         return ResponseEntity.ok(response);
     }
 
-    // ✅ Delete User by ID
+    // Delete User by ID
     @DeleteMapping("/{id}")
     public ResponseEntity<CommonResponse> deleteUser(@PathVariable Long id) {
         userService.deleteUserById(id);
         return ResponseEntity.ok(new CommonResponse("User deleted successfully."));
     }
 
-    //change passoword
-    @PutMapping("/change-password")
-    public ResponseEntity<String> changePassword(@RequestBody RegisterRequestDTO request) {
-        String response = userService.changePassword(request);
-        return ResponseEntity.ok(response);
+    //change password
+    @PostMapping("/changePassword")
+    public ResponseEntity<CommonResponse> changePassword(@RequestHeader("Authorization") String token, @RequestBody ChangePasswordRequest request) {
+        return ResponseEntity.ok(userService.changePassword(token, request));
     }
 
     //Update or upload profile picture

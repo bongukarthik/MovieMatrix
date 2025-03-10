@@ -26,7 +26,7 @@ public class JwtUtil {
     private String secretKey;
 
     //    need to remove this and use secretkey instad of newseretkey
-    private String newSecretKey;
+//    private String newSecretKey;
     // default 1 hour in milliseconds
     @Value("${jwt.expiration:3600000}")
     private long jwtExpiration;
@@ -40,8 +40,8 @@ public class JwtUtil {
     protected void init() {
         // Base64 encode the secret key for better security
         System.out.println("secret Key: " + secretKey);
-        newSecretKey = Base64.getEncoder().encodeToString(secretKey.getBytes());
-        System.out.println("secret Key After: " + newSecretKey);
+        secretKey = Base64.getEncoder().encodeToString(secretKey.getBytes());
+        System.out.println("secret Key After: " + secretKey);
     }
 
     public String generateToken(User user) {

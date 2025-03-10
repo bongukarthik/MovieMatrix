@@ -2,6 +2,7 @@ package com.movieMatrix.controllers;
 
 import com.movieMatrix.models.Movie;
 import com.movieMatrix.services.MovieService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,13 +13,11 @@ import java.util.Optional;
 @RequestMapping("/api/movies")
 //@CrossOrigin(origins = "*")
 @CrossOrigin("*")
+@RequiredArgsConstructor
 public class MovieController {
 
     private final MovieService movieService;
 
-    public MovieController(MovieService movieService) {
-        this.movieService = movieService;
-    }
 
     // Get all movies
     @GetMapping

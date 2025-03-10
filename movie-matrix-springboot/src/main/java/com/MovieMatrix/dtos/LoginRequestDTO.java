@@ -14,6 +14,5 @@ public class LoginRequestDTO {
     private String email;
     @NotBlank(message = "Password is required")
     private String password;
-
     private String phoneNumber;
 }

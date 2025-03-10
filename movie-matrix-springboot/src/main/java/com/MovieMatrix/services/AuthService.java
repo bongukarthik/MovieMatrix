@@ -83,9 +83,10 @@ public class AuthService {
         boolean isValid = securityConfig.passwordEncoder().matches(rawPassword, user.getPassword());
         if (!isValid) {
 //            log.warn("Invalid password attempt for user: {}", maskEmail(user.getEmail()));
-            System.out.println("Invalid password attempt for user: {}" + maskEmail(user.getEmail()));
+//            System.out.println("Invalid password attempt for user: {}" + maskEmail(user.getEmail()));
+            throw new UserException("Invalid password attempt for user: {}" + maskEmail(user.getEmail()));
         }
-        return isValid;
+        return true;
     }
 
     private TokenResponse authenticateUser(User user) {
