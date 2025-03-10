@@ -13,7 +13,7 @@ const ProfilePage = () => {
   useEffect(() => {
     if (user) {
       // Fetch user profile data from the backend
-      apiService.get(`/profile/${user.id}`)
+      apiService.get(`/user/${user.id}`)
         .then(response => {
           setProfile(response);
           setUpdatedProfile(response);
@@ -40,7 +40,7 @@ const ProfilePage = () => {
         const formData = new FormData();
         formData.append("file", selectedFile);
 
-        const uploadResponse = await apiService.post("/profile/uploadProfilePicture", formData, {
+        const uploadResponse = await apiService.post("/user/uploadProfilePicture", formData, {
         //   headers: { "Content-Type": "multipart/form-data" }
         });
 
@@ -48,7 +48,7 @@ const ProfilePage = () => {
       }
 
       // Update profile
-      await apiService.put(`/profile/update`, updatedProfile, {
+      await apiService.put(`/user/update`, updatedProfile, {
         headers: { "Content-Type": "application/json" },
       });
       setProfile(updatedProfile);

@@ -43,7 +43,7 @@ const dataProvider = {
 
     // Handle user-specific API
     let url = `/${resource}`;
-    if (resource === "users") url = "/users/all";
+    if (resource === "user") url = "/user/all";
 
     try {
       const response = await apiService.get(url);
@@ -70,7 +70,7 @@ const dataProvider = {
     console.log("Creating new entry for:", resource, params);
 
     try {
-      const response = await apiService.post(`/${resource}`, params.data);
+      const response = await apiService.post(`/${resource}/all`, params.data);
       return { data: { ...params.data, id: response.id } }; // Ensure response includes `id`
     } catch (error) {
       console.error(`Error creating ${resource}:`, error);
@@ -83,7 +83,7 @@ const dataProvider = {
 
     // Handle user-specific update API
     let url = `/${resource}/${params.id}`;
-    if (resource === "users") url = "/users/update";
+    if (resource === "user") url = "/user/update";
 
     try {
       const response = await apiService.put(url, params.data);
@@ -99,7 +99,7 @@ const dataProvider = {
 
     // Handle user-specific delete API
     let url = `/${resource}/${params.id}`;
-    if (resource === "users") url = "/users/delete";
+    if (resource === "user") url = "/user/delete";
 
     try {
       await apiService.delete(url, { id: params.id });

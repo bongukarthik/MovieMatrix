@@ -44,7 +44,7 @@ const AdminDashboard = () => {
       basename="/admin"
     >
       <Resource name="movies" list={MovieList} edit={MovieEdit} create={MovieCreate} />
-      <Resource name="users" list={UserList} edit={UserEdit} />
+      <Resource name="user" list={UserList} edit={UserEdit} />
     </Admin>
   );
 };

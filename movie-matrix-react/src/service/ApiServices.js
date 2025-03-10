@@ -1,6 +1,7 @@
 class ApiServices {
     constructor(baseURL) {
       this.baseURL = baseURL;
+      console.l
     }
   
 

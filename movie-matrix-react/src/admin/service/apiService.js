@@ -27,6 +27,8 @@ class ApiService {
   
       try {
         const response = await fetch(`${this.baseURL}${endpoint}`, options);
+        console.log("Base url: ",this.baseURL);
+        console.log("endpopint",endpoint);
         if (!response.ok) {
           throw new Error(`API Error: ${response.statusText}`);
         }
